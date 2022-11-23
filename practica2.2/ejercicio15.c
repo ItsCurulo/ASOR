@@ -12,7 +12,7 @@ int main(int argc, char** argv){
 		exit(1);
 	}
 	int fd;
-	if(fd = open(argv[1],O_RDWR) == -1){
+	if((fd = open(argv[1],O_RDWR)) == -1){
 		perror("open");
 		exit(1);
 	}

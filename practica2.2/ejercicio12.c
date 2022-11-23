@@ -13,7 +13,7 @@ int main(int argc, char**argv){
 	}
 
 	int oldfd;
-	if(oldfd=open(argv[1],O_CREAT|O_RDWR,0666==-1)){
+	if((oldfd=open(argv[1],O_CREAT|O_RDWR,0666))==-1){
 		perror("open");
 		exit(1);
 	}

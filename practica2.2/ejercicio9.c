@@ -13,7 +13,7 @@ int main(int argc, char** argv){
 		exit(1);
 	}
 	int st;
-	if(st = stat(argv[1],&statbuf) == -1){
+	if((st = stat(argv[1],&statbuf)) == -1){
 		perror("Stat");
 		exit(1);
 	}

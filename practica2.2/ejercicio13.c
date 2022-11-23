@@ -14,7 +14,7 @@ int main(int argc, char** argv){
 		exit(1);
 	}
 	int fdold;
-	if(fdold = open(argv[1], O_CREAT | O_RDWR, 0666) == -1){
+	if((fdold = open(argv[1], O_CREAT | O_RDWR, 0666)) == -1){
 		perror("open");
 		exit(1);
 	}
