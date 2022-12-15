@@ -48,7 +48,7 @@ int main(int argc,char** argv){
 	socklen_t client_addr_len = sizeof(client_addr);
 	char host[NI_MAXHOST];
 	char service[NI_MAXSERV];
-	char buf[3];
+	char buf[129];
 	int retval;
 	int sockfd;
 	ssize_t bytes;
@@ -75,7 +75,7 @@ int main(int argc,char** argv){
 		printf("Conexión desde %s:%s\n",host,service);
 
 		while(1){
-			bytes = recv(sockfd,buf,2,0);
+			bytes = recv(sockfd,buf,128,0);
 			if(bytes == -1){
 				perror("recv");
 				exit(1);
@@ -87,7 +87,7 @@ int main(int argc,char** argv){
 				exit(1);
 			}
 			
-			memset(buf,0,2);	
+			memset(buf,0,128);	
 		}
 		close(sockfd);
 		printf("Conexión terminada\n");	
